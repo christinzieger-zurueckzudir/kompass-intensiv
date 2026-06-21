@@ -1,72 +1,717 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Kompass Intensiv – Teil 2 · In deinen Körper</title>
 <style>
-:root{--bg:#fbf5ed;--card:#fffaf4;--text:#3f352b;--muted:#8a765f;--line:#eadcc8;--accent:#c99b63;--accent2:#8f9c76;--soft:#f3e7d7}
-*{box-sizing:border-box}body{margin:0;font-family:Georgia,"Times New Roman",serif;background:linear-gradient(180deg,var(--bg),#fffdf9);color:var(--text);line-height:1.6}.wrap{max-width:980px;margin:0 auto;padding:28px 18px 70px}.card{background:rgba(255,250,244,.94);border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 18px 50px rgba(80,58,34,.10);margin:20px 0}.hero{text-align:center;padding:54px 34px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;color:var(--accent);font-size:.82rem;margin-bottom:8px}h1{font-size:2.45rem;line-height:1.12;margin:8px 0 12px}h2{font-size:1.55rem;margin:0 0 16px}h3{font-size:1.18rem;margin:24px 0 8px}p{margin:10px 0}.lead{font-size:1.08rem;color:var(--muted)}.small{font-size:.92rem;color:var(--muted)}.hidden{display:none}.btn{border:0;background:var(--accent);color:white;padding:13px 22px;border-radius:999px;font-family:inherit;font-size:1rem;cursor:pointer;margin:8px 8px 0 0;box-shadow:0 8px 22px rgba(201,155,99,.25)}.btn.secondary{background:white;color:var(--text);border:1px solid var(--line);box-shadow:none}.note{background:#f5eadb;border-left:4px solid var(--accent);padding:14px 16px;border-radius:16px;margin:16px 0}.pill{display:inline-block;background:#f1e4d2;color:#6e573d;padding:6px 12px;border-radius:999px;margin:4px;font-size:.9rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;color:var(--muted);font-size:.92rem;margin-bottom:6px}select,input{width:100%;padding:12px;border:1px solid var(--line);border-radius:15px;background:white;color:var(--text);font-family:inherit;font-size:1rem}.progress{height:10px;background:#efe2d0;border-radius:999px;overflow:hidden;margin:14px 0 8px}.bar{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:.25s}.meta{text-align:right;color:var(--muted);font-size:.92rem}.question-title{font-size:1.34rem;margin:18px 0}.answers{display:grid;gap:12px}.answer{display:block;background:white;border:1px solid var(--line);border-radius:18px;padding:15px 16px;cursor:pointer}.answer:hover,.answer.selected{background:#fff4e4;border-color:var(--accent)}.answer input{width:auto;margin-right:10px}.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.result-box{background:white;border:1px solid var(--line);border-radius:20px;padding:18px;margin:12px 0}.score-row{margin:12px 0}.score-head{display:flex;justify-content:space-between;gap:12px;font-size:.95rem}.score-line{height:10px;background:#efe2d0;border-radius:999px;overflow:hidden;margin-top:6px}.score-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}.section-title{border-top:1px solid var(--line);padding-top:22px;margin-top:26px}@media print{.btn,.progress,.meta{display:none}.card{box-shadow:none}}@media(max-width:720px){.grid,.result-grid{grid-template-columns:1fr}.hero,.card{padding:24px}h1{font-size:2rem}}
+:root{
+--bg:#fbf5ed;
+--card:#fffaf4;
+--text:#3f352b;
+--muted:#8a765f;
+--line:#eadcc8;
+--accent:#c99b63;
+--accent2:#8f9c76}
+*{
+box-sizing:border-box}
+body{
+margin:0;
+font-family:Georgia,"Times New Roman",serif;
+background:linear-gradient(180deg,var(--bg),
+#fffdf9);
+color:var(--text);
+line-height:1.62}
+.wrap{
+max-width:980px;
+margin:0 auto;
+padding:28px 18px 70px}
+.card{
+background:rgba(255,250,244,.95);
+border:1px solid var(--line);
+border-radius:28px;
+padding:34px;
+box-shadow:0 18px 50px rgba(80,58,34,.10);
+margin:20px 0}
+.hero{
+text-align:center;
+padding:54px 34px}
+.eyebrow{
+text-transform:uppercase;
+letter-spacing:.18em;
+color:var(--accent);
+font-size:.82rem;
+margin-bottom:8px}
+h1{
+font-size:2.45rem;
+line-height:1.12;
+margin:8px 0 12px}
+h2{
+font-size:1.55rem;
+margin:0 0 16px}
+h3{
+font-size:1.18rem;
+margin:24px 0 8px}
+p{
+margin:10px 0}
+.lead{
+font-size:1.08rem;
+color:var(--muted)}
+.hidden{
+display:none}
+.btn{
+border:0;
+background:var(--accent);
+color:white;
+padding:13px 22px;
+border-radius:999px;
+font-family:inherit;
+font-size:1rem;
+cursor:pointer;
+margin:8px 8px 0 0;
+box-shadow:0 8px 22px rgba(201,155,99,.25)}
+.btn.secondary{
+background:white;
+color:var(--text);
+border:1px solid var(--line);
+box-shadow:none}
+.note{
+background:#f5eadb;
+border-left:4px solid var(--accent);
+padding:14px 16px;
+border-radius:16px;
+margin:16px 0}
+.pill{
+display:inline-block;
+background:#f1e4d2;
+color:#6e573d;
+padding:6px 12px;
+border-radius:999px;
+margin:4px;
+font-size:.9rem}
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px}
+.field label{
+display:block;
+color:var(--muted);
+font-size:.92rem;
+margin-bottom:6px}
+select,input,textarea{
+width:100%;
+padding:12px;
+border:1px solid var(--line);
+border-radius:15px;
+background:white;
+color:var(--text);
+font-family:inherit;
+font-size:1rem}
+textarea{
+min-height:82px}
+.progress{
+height:10px;
+background:#efe2d0;
+border-radius:999px;
+overflow:hidden;
+margin:14px 0 8px}
+.bar{
+height:100%;
+background:linear-gradient(90deg,var(--accent),
+var(--accent2));
+width:0%;
+transition:.25s}
+.meta{
+text-align:right;
+color:var(--muted);
+font-size:.92rem}
+.question-title{
+font-size:1.34rem;
+margin:18px 0}
+.answers{
+display:grid;
+gap:12px}
+.answer{
+display:block;
+background:white;
+border:1px solid var(--line);
+border-radius:18px;
+padding:15px 16px;
+cursor:pointer}
+.answer:hover,.answer.selected{
+background:#fff4e4;
+border-color:var(--accent)}
+.answer input{
+width:auto;
+margin-right:10px}
+.result-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px}
+.result-box{
+background:white;
+border:1px solid var(--line);
+border-radius:20px;
+padding:18px;
+margin:12px 0}
+.score-row{
+margin:12px 0}
+.score-head{
+display:flex;
+justify-content:space-between;
+gap:12px;
+font-size:.95rem}
+.score-line{
+height:10px;
+background:#efe2d0;
+border-radius:999px;
+overflow:hidden;
+margin-top:6px}
+.score-fill{
+height:100%;
+background:linear-gradient(90deg,var(--accent),
+var(--accent2))}
+.section-title{
+border-top:1px solid var(--line);
+padding-top:22px;
+margin-top:26px}
+.print-footer{
+margin-top:30px;
+padding:18px;
+background:#f5eadb;
+border-radius:18px;
+border-left:4px solid var(--accent)}
+li{
+margin:6px 0}
+@media print{
+.btn,.progress,.meta{
+display:none}
+.card{
+box-shadow:none}
+.wrap{
+max-width:900px}
+.print-footer{
+page-break-inside:avoid}
+}
+@media(max-width:720px){
+.grid,.result-grid{
+grid-template-columns:1fr}
+.hero,.card{
+padding:24px}
+h1{
+font-size:2rem}
+}
+
 </style>
 </head>
 <body>
 <div class="wrap">
-<section id="start" class="card hero"><div class="eyebrow">Christin Zieger · Zurück zu dir</div><h1>Kompass Intensiv</h1><h2>Teil 2 – In deinen Körper</h2><p class="lead">Verstehe die Sprache deines Körpers und entdecke, welche Bedürfnisse dein System wirklich hat.</p><p><span class="pill">Körper</span><span class="pill">Energie</span><span class="pill">Stress</span><span class="pill">Ernährung</span><span class="pill">Regeneration</span></p><div class="note">Dieser Kompass ist keine Diagnose und ersetzt keine medizinische Beratung. Er ist eine Orientierungshilfe, um Muster zu erkennen und deinen Körper bewusster zu verstehen.</div><button class="btn" onclick="showPage('intro')">Beginnen</button></section>
-<section id="intro" class="card hidden"><div class="eyebrow">Einleitung</div><h2>Warum dieser Kompass entstanden ist</h2><p>Im ersten Kompass ging es um dein Inneres: deine Essenzen, Talente, Werte und Potenziale.</p><p>In diesem zweiten Teil geht es um deinen Körper. Um dein Nervensystem. Um Stress. Um Regeneration. Um Ernährung. Um Bewegung. Um die Frage, was dein System wirklich braucht.</p><p>Viele Systeme beschreiben ähnliche Grundmuster mit unterschiedlichen Worten: Ayurveda, Human Design, Blutgruppenmodelle, Körpertypen, Ernährungssysteme, Persönlichkeitsmodelle und praktische Lebenserfahrung.</p><p>Dieser Kompass möchte diese Blickwinkel verbinden und dir helfen, die Sprache deines Körpers besser zu verstehen.</p><div class="note">Du bist nicht nur ein Typ. Die meisten Menschen tragen mehrere Anteile in sich. Deshalb zeigt dir diese Auswertung eine Verteilung aus Hauptsystem, Nebensystem und weiteren Anteilen.</div><button class="btn" onclick="showPage('prepare')">Weiter</button></section>
-<section id="prepare" class="card hidden"><div class="eyebrow">Vorbereitung</div><h2>Deine bisherigen Ergebnisse</h2><p>Falls du diese Ergebnisse bereits kennst, trage sie kurz ein. Die eigentliche Auswertung entsteht über deine Antworten im Körper-Kompass.</p><div class="grid"><div class="field"><label>Hast du Kompass Intensiv Teil 1 gemacht?</label><select id="donePart1"><option>Nein / noch nicht</option><option>Ja</option></select></div><div class="field"><label>Hauptessenz aus Teil 1</label><select id="essenz1"><option>unbekannt</option><option>Begleiterin</option><option>Verbinderin</option><option>Entdeckerin</option><option>Erschafferin</option><option>Optimiererin</option><option>Umsetzerin</option><option>Visionärin</option><option>Hüterin</option></select></div><div class="field"><label>Nebenessenz aus Teil 1</label><select id="essenz2"><option>unbekannt</option><option>Begleiterin</option><option>Verbinderin</option><option>Entdeckerin</option><option>Erschafferin</option><option>Optimiererin</option><option>Umsetzerin</option><option>Visionärin</option><option>Hüterin</option></select></div><div class="field"><label>Human Design Typ</label><select id="hd"><option>unbekannt</option><option>Generator</option><option>Manifestierender Generator</option><option>Projektor</option><option>Manifestor</option><option>Reflektor</option></select></div><div class="field"><label>Ayurveda-Tendenz</label><select id="ayur"><option>unbekannt</option><option>Vata</option><option>Pitta</option><option>Kapha</option><option>Mischtyp</option></select></div><div class="field"><label>Blutgruppe</label><select id="blood"><option>unbekannt</option><option>0</option><option>A</option><option>B</option><option>AB</option></select></div></div><div class="note">Beantworte die folgenden Fragen so, wie dein Körper und dein Alltag tatsächlich reagieren.</div><button class="btn" onclick="startQuiz()">Mit den Fragen starten</button></section>
-<section id="quiz" class="card hidden"><div class="progress"><div id="bar" class="bar"></div></div><div id="qmeta" class="meta"></div><h2 id="qtitle" class="question-title"></h2><div id="answers" class="answers"></div><div style="margin-top:22px"><button class="btn secondary" onclick="prevQuestion()">Zurück</button><button class="btn" onclick="nextQuestion()">Weiter</button></div></section>
-<section id="results" class="card hidden"><div class="eyebrow">Deine Auswertung</div><h1>Dein Körper-Kompass</h1><p class="lead">Diese Auswertung ist ein Spiegel deiner Antworten. Sie zeigt Tendenzen, keine festen Schubladen.</p><div id="resultContent"></div><button class="btn" onclick="window.print()">Drucken / als PDF sichern</button><button class="btn secondary" onclick="restart()">Neu starten</button></section>
+<section id="start" class="card hero">
+<div class="eyebrow">Christin Zieger · Zurück zu dir</div>
+<h1>Kompass Intensiv</h1>
+<h2>Teil 2 – In deinen Körper</h2>
+<p class="lead">Verstehe die Sprache deines Körpers und entdecke, welche Bedürfnisse dein System wirklich hat.</p>
+<p>
+<span class="pill">Körper</span>
+<span class="pill">Energie</span>
+<span class="pill">Stress</span>
+<span class="pill">Ernährung</span>
+<span class="pill">Regeneration</span>
+</p>
+<div class="note">Dieser Kompass ist keine Diagnose. Er ist ein Werkzeug zur Selbstbeobachtung und verbindet verschiedene Blickwinkel: Körpersysteme, Ayurveda, Human Design, Blutgruppe, Rhesusfaktor und deine bisherigen Erkenntnisse aus Teil 1.</div>
+<button class="btn" onclick="showPage('intro')">Beginnen</button>
+</section>
+<section id="intro" class="card hidden">
+<div class="eyebrow">Einleitung</div>
+<h2>Warum es diesen zweiten Kompass gibt</h2>
+<p>Im ersten Kompass ging es darum, dich selbst besser kennenzulernen: deine Essenzen, Talente, Werte, Stärken und inneren Muster.</p>
+<p>Doch selbst wenn wir wissen, wer wir sind, bedeutet das noch nicht automatisch, dass wir verstehen, warum unser Körper so reagiert, wie er reagiert.</p>
+<p>Warum verträgt ein Mensch Fasten wunderbar und ein anderer fühlt sich nach wenigen Stunden ohne Essen kraftlos? Warum bekommt der eine durch Bewegung Energie und der andere braucht zuerst Ruhe? Warum reagiert ein Körper stark auf Stress, Schlafmangel, emotionale Belastung oder bestimmte Lebensmittel, während ein anderer scheinbar alles wegsteckt?</p>
+<p>Je länger ich mich mit unterschiedlichen Systemen beschäftigt habe, desto mehr ist mir aufgefallen: Viele Systeme beschreiben ähnliche Muster – nur mit anderen Worten.</p>
+<p>Ayurveda, Human Design, Blutgruppen, Rhesusfaktor, Körpertypen, Ernährungssysteme, Persönlichkeitsmodelle und Erfahrungen aus dem echten Leben zeigen oft in eine ähnliche Richtung.</p>
+<div class="note">Dieser Kompass soll dir nicht sagen, wer du bist. Er soll dir helfen, Zusammenhänge zu erkennen und deinen Körper wieder besser zu verstehen. Denn du bist nicht einfach etwas. Du entwickelst dich, du reagierst, du passt dich an – und manchmal zeigt dein Körper dir, dass es Zeit ist, wieder näher zu dir zurückzukommen.</div>
+<button class="btn" onclick="showPage('prepare')">Weiter</button>
+</section>
+<section id="prepare" class="card hidden">
+<div class="eyebrow">Vorbereitung</div>
+<h2>Deine bisherigen Informationen</h2>
+<p>Trage ein, was du bereits weißt. Diese Angaben fließen später in deine persönliche Auswertung ein.</p>
+<div class="grid">
+<div class="field">
+<label>Wie dürfen wir dich ansprechen?</label>
+<input id="name" placeholder="z. B. Christin">
+</div>
+<div class="field">
+<label>Hast du Kompass Intensiv Teil 1 gemacht?</label>
+<select id="donePart1">
+<option>Nein / noch nicht</option>
+<option>Ja</option>
+</select>
+</div>
+<div class="field">
+<label>Hauptessenz aus Teil 1</label>
+<select id="essenz1">
+<option>unbekannt</option>
+<option>Begleiterin</option>
+<option>Verbinderin</option>
+<option>Entdeckerin</option>
+<option>Erschafferin</option>
+<option>Optimiererin</option>
+<option>Umsetzerin</option>
+<option>Visionärin</option>
+<option>Hüterin</option>
+</select>
+</div>
+<div class="field">
+<label>Nebenessenz aus Teil 1</label>
+<select id="essenz2">
+<option>unbekannt</option>
+<option>Begleiterin</option>
+<option>Verbinderin</option>
+<option>Entdeckerin</option>
+<option>Erschafferin</option>
+<option>Optimiererin</option>
+<option>Umsetzerin</option>
+<option>Visionärin</option>
+<option>Hüterin</option>
+</select>
+</div>
+<div class="field">
+<label>Human Design Typ</label>
+<select id="hd">
+<option>unbekannt</option>
+<option>Generator</option>
+<option>Manifestierender Generator</option>
+<option>Projektor</option>
+<option>Manifestor</option>
+<option>Reflektor</option>
+</select>
+</div>
+<div class="field">
+<label>Ayurveda-Tendenz</label>
+<select id="ayur">
+<option>unbekannt</option>
+<option>Vata</option>
+<option>Pitta</option>
+<option>Kapha</option>
+<option>Vata-Pitta</option>
+<option>Pitta-Kapha</option>
+<option>Vata-Kapha</option>
+<option>Tridosha / Mischtyp</option>
+</select>
+</div>
+<div class="field">
+<label>Blutgruppe</label>
+<select id="blood">
+<option>unbekannt</option>
+<option>0</option>
+<option>A</option>
+<option>B</option>
+<option>AB</option>
+</select>
+</div>
+<div class="field">
+<label>Rhesusfaktor</label>
+<select id="rhesus">
+<option>unbekannt</option>
+<option>positiv</option>
+<option>negativ</option>
+</select>
+</div>
+</div>
+<div class="note">Beantworte die folgenden Fragen so, wie dein Körper und dein Alltag tatsächlich reagieren – nicht so, wie du gern wärst.</div>
+<button class="btn" onclick="startQuiz()">Mit den Fragen starten</button>
+</section>
+<section id="quiz" class="card hidden">
+<div class="progress">
+<div id="bar" class="bar">
+</div>
+</div>
+<div id="qmeta" class="meta">
+</div>
+<h2 id="qtitle" class="question-title">
+</h2>
+<div id="answers" class="answers">
+</div>
+<div style="margin-top:22px">
+<button class="btn secondary" onclick="prevQuestion()">Zurück</button>
+<button class="btn" onclick="nextQuestion()">Weiter</button>
+</div>
+</section>
+<section id="reflect" class="card hidden">
+<div class="eyebrow">Deine Integration</div>
+<h2>Bevor deine Auswertung erscheint</h2>
+<p>Notiere kurz, was du aus dem Test spontan für dich mitnimmst. Dieser Text erscheint in deiner PDF.</p>
+<div class="field">
+<label>Meine wichtigste Erkenntnis</label>
+<textarea id="insight" placeholder="Was hast du gerade über dich erkannt?">
+</textarea>
+</div>
+<div class="field">
+<label>Mein nächster kleiner Schritt</label>
+<textarea id="step" placeholder="Was möchtest du in den nächsten Tagen bewusst beobachten oder verändern?">
+</textarea>
+</div>
+<button class="btn" onclick="showResults()">Auswertung anzeigen</button>
+</section>
+<section id="results" class="card hidden">
+<div class="eyebrow">Deine Auswertung</div>
+<h1>Dein Körper-Kompass</h1>
+<p class="lead" id="personalLead">
+</p>
+<div id="resultContent">
+</div>
+<button class="btn" onclick="window.print()">Drucken / als PDF sichern</button>
+<button class="btn secondary" onclick="restart()">Neu starten</button>
+</section>
 </div>
 <script>
-const typeNames={A:"Typ 1 · Aktivierungssystem",B:"Typ 2 · Regulationssystem",C:"Typ 3 · Verbindungssystem",D:"Typ 4 · Resonanzsystem"};
-const typeShort={A:"Aktivierung",B:"Regulation",C:"Verbindung",D:"Resonanz"};
+
+const typeNames={
+A:'Typ 1 · Aktivierungssystem',B:'Typ 2 · Regulationssystem',C:'Typ 3 · Verbindungssystem',D:'Typ 4 · Resonanzsystem'}
+,typeShort={
+A:'Aktivierung',B:'Regulation',C:'Verbindung',D:'Resonanz'}
+;
+
+
 const descriptions={
-A:{title:"Typ 1 · Das Aktivierungssystem",core:"Menschen dieses Typs fühlen sich häufig besser, wenn Energie in Bewegung kommt. Der Körper liebt Aktivität, Herausforderung, Umsetzung und Fortschritt.",stress:"Unter Stress macht dieser Typ oft noch mehr: mehr Aufgaben, mehr Leistung, mehr Bewegung, mehr Funktionieren.",food:"Viele Menschen mit starkem Aktivierungssystem berichten, dass sie proteinreiche, nährende und strukturierte Mahlzeiten gut vertragen. Fasten oder längere Essenspausen werden häufiger als stabilisierend erlebt, solange kein zusätzlicher Stress entsteht. Essen in Gemeinschaft kann Energie geben.",move:"Oft hilfreich sind Krafttraining, Intervalltraining, Sport mit Ziel, Wandern, Radfahren oder andere aktive Bewegungsformen.",rhythm:"Dieses System braucht Wasser und Versorgung praktisch im Alltag eingebaut. Klare Routinen helfen mehr als komplizierte Regeln.",watch:"Der wichtigste Entwicklungsschlüssel ist nicht noch mehr Aktivität, sondern: Wann braucht mein Körper Erholung?"},
-B:{title:"Typ 2 · Das Regulationssystem",core:"Menschen dieses Typs reagieren häufig deutlich auf Stress, Druck und Dauerbelastung. Der Körper meldet sich früh über Schlaf, Verdauung, Energie, Hormone, Spannung oder Erschöpfung.",stress:"Unter Stress funktioniert dieser Typ oft weiter, obwohl der Körper bereits Signale sendet.",food:"Viele profitieren von regelmäßigen, eher kleineren Mahlzeiten, ruhigem Essen, ausreichend Ballaststoffen und gut verträglichen Lebensmitteln. Fasten kann eher zusätzlichen Stress erzeugen. Eine entspannte, stille Atmosphäre beim Essen ist oft sehr wichtig.",move:"Oft hilfreich sind Yoga, Spaziergänge, Mobilität, Atemarbeit, sanftes Krafttraining und alles, was das Nervensystem beruhigt.",rhythm:"Schlaf, Pausen, Wärme, Entlastung und Reizreduktion sind zentrale Stellschrauben.",watch:"Der wichtigste Entwicklungsschlüssel ist: Erst regulieren, dann entscheiden."},
-C:{title:"Typ 3 · Das Verbindungssystem",core:"Menschen dieses Typs sind körperlich und energetisch häufig eng mit Beziehungen, Harmonie und Zugehörigkeit verbunden.",stress:"Unter Stress kümmert sich dieser Typ oft zuerst um andere, übernimmt Verantwortung und stellt eigene Bedürfnisse zurück.",food:"Essen hat oft einen sozialen Charakter. Gemeinsame Mahlzeiten, schöne Atmosphäre und liebevolle Rituale können stärkend sein. Gleichzeitig lohnt es sich, emotionales Essen und Essen aus Anpassung zu beobachten.",move:"Oft hilfreich sind Tanz, Gruppenbewegung, Spaziergänge mit Menschen, gemeinsamer Sport oder Aktivitäten, die Verbindung und Körper zusammenbringen.",rhythm:"Dieses System braucht Selbstfürsorge als festen Bestandteil des Alltags.",watch:"Der wichtigste Entwicklungsschlüssel ist: Ich darf für andere da sein, ohne mich selbst zu verlassen."},
-D:{title:"Typ 4 · Das Resonanzsystem",core:"Menschen dieses Typs reagieren häufig stark auf Umfeld, Atmosphäre, Räume, Menschen und feine Reize.",stress:"Unter Stress entsteht häufig Rückzug, Reizüberflutung, Erschöpfung oder das Gefühl, sich selbst nicht mehr klar zu spüren.",food:"Viele profitieren von einfacher, klarer, regelmäßiger und reizarm gestalteter Ernährung. Ruhiges Essen, wenig Ablenkung, kein Streit und eine angenehme Atmosphäre sind oft entscheidend.",move:"Oft hilfreich sind Natur, Spaziergänge, Erdung, ruhige Bewegungsformen, bewusste Atmung und regelmäßige Auszeiten.",rhythm:"Dieses System braucht klare Grenzen zu Reizen. Orte, Menschen, Geräusche, Licht, Räume und Atmosphäre sind echte Gesundheitsfaktoren.",watch:"Der wichtigste Entwicklungsschlüssel ist: Was gehört zu mir und was habe ich aus meinem Umfeld aufgenommen?"}};
-const questions=[
-["Nach einem anstrengenden Tag merke ich am ehesten:",["Ich möchte mich bewegen oder körperlich etwas rauslassen.","A","active"],["Ich brauche Ruhe, Pause und möglichst wenig Reize.","B","passive"],["Ich möchte mit jemandem reden oder Zeit mit Menschen verbringen.","C","active"],["Ich möchte allein sein und alles in mir sortieren.","D","passive"]],
-["Wenn ich längere Zeit unter Stress stehe:",["Mein Körper beginnt deutliche Signale zu senden.","B","passive"],["Ich kümmere mich weiter um andere und vergesse mich selbst.","C","active"],["Ich ziehe mich zunehmend zurück.","D","passive"],["Ich werde noch aktiver und beschäftige mich ständig.","A","active"]],
-["Wann fühlt sich dein Körper am ehesten ausgeglichen an?",["Wenn meine Beziehungen harmonisch sind.","C","active"],["Wenn ich mich körperlich bewegt habe.","A","active"],["Wenn mein Umfeld ruhig und angenehm ist.","D","passive"],["Wenn ich ausreichend Erholung bekommen habe.","B","passive"]],
-["Beim Essen fühle ich mich am wohlsten:",["Wenn es ruhig, bewusst und ohne Stress ist.","B","passive"],["Wenn es lebendig ist und Menschen dabei sind.","A","active"],["Wenn die Atmosphäre friedlich und reizarm ist.","D","passive"],["Wenn ich mit Menschen esse, die mir guttun.","C","active"]],
-["Wenn alles zu viel wird, passiert bei mir eher:",["Ich brauche Abstand von allem.","D","passive"],["Ich funktioniere weiter und mache noch mehr.","A","active"],["Mein Körper bremst mich irgendwann aus.","B","passive"],["Ich versuche trotzdem, für alle da zu sein.","C","active"]],
-["Welche Bewegung fühlt sich für dich am natürlichsten an?",["Gemeinsam, spielerisch oder in Verbindung mit anderen.","C","active"],["Sanft, regulierend, ruhig und bewusst.","B","passive"],["Kraft, Sport, klare Aktivität oder Herausforderung.","A","active"],["Natur, Gehen, Erdung oder intuitive Bewegung.","D","passive"]],
-["Wenn du mehrere Tage kaum Bewegung hast:",["Ich merke eher, dass mein System schwerer wird.","B","passive"],["Mir fehlt oft der soziale Ausgleich.","C","active"],["Ich verliere schneller meine innere Klarheit.","D","passive"],["Ich werde unruhig oder fühle mich gestaut.","A","active"]],
-["Welche Aussage beschreibt dich beim Thema Ernährung am ehesten?",["Mein Körper reagiert stark auf Atmosphäre und Unverträglichkeiten.","D","passive"],["Mein Körper braucht Substanz und gute Energiequellen.","A","active"],["Essen ist für mich oft mit Gefühl und Beziehung verbunden.","C","active"],["Mein Körper reagiert sensibel auf Stress beim Essen.","B","passive"]],
-["Wie reagierst du auf längere Essenspausen oder Fasten?",["Es hängt stark von Stimmung und Alltag ab.","C","active"],["Oft eher gut, klar oder stabil.","A","active"],["Sehr unterschiedlich, mein System reagiert fein.","D","passive"],["Eher empfindlich, gestresst oder unruhig.","B","passive"]],
-["Wenn viele Menschen gleichzeitig etwas von dir wollen:",["Ich fühle mich schnell überreizt.","D","passive"],["Ich versuche, es praktisch zu lösen.","A","active"],["Ich will möglichst niemanden enttäuschen.","C","active"],["Ich merke schnell Druck in meinem Körper.","B","passive"]],
-["Welche Körperreaktion kennst du bei Belastung am ehesten?",["Schlaf, Verdauung, Hormone oder Energie geraten aus Balance.","B","passive"],["Anspannung durch zu viel Aktivität oder Druck.","A","active"],["Erschöpfung, Rückzug oder Reizüberflutung.","D","passive"],["Emotionales Essen, Enge oder Druck durch Beziehungsthemen.","C","active"]],
-["Was gibt dir nach einer schwierigen Phase am ehesten Stabilität?",["Wieder echte Verbindung spüren.","C","active"],["Wieder in Ruhe kommen.","B","passive"],["Wieder bei mir selbst ankommen.","D","passive"],["Wieder ins Tun kommen.","A","active"]],
-["Wie nimmst du deinen Körper wahr?",["Eher über Kraft, Aktivität und Leistungsfähigkeit.","A","active"],["Eher über feine Signale und Atmosphäre.","D","passive"],["Eher über Symptome, Spannung oder Erschöpfung.","B","passive"],["Eher über Gefühle und Beziehungen.","C","active"]],
-["Welche Umgebung unterstützt deine Verdauung am meisten?",["Ruhig, langsam und ohne Ablenkung.","B","passive"],["Liebevoll, gemeinsam und harmonisch.","C","active"],["Lebendig, aber positiv und entspannt.","A","active"],["Still, friedlich und reizarm.","D","passive"]],
-["Was passiert, wenn du deine Bedürfnisse lange übergehst?",["Ich fühle mich leer, obwohl ich viel gegeben habe.","C","active"],["Ich werde gereizt oder überdreht.","A","active"],["Ich ziehe mich innerlich oder äußerlich zurück.","D","passive"],["Mein Körper zeigt klare Warnsignale.","B","passive"]],
-["Welche Tagesqualität tut dir am besten?",["Still, frei, atmosphärisch angenehm.","D","passive"],["Aktiv, klar, produktiv.","A","active"],["Ruhig, geordnet, regenerierend.","B","passive"],["Herzlich, verbunden, gemeinschaftlich.","C","active"]],
-["Wenn du dich neu ausrichten möchtest, hilft dir am meisten:",["Mehr Pausen und weniger Druck.","B","passive"],["Ein klarer Plan mit Bewegung und Umsetzung.","A","active"],["Rückzug, Natur und Abstand vom Außen.","D","passive"],["Unterstützende Menschen und Austausch.","C","active"]],
-["Welche Aussage trifft eher auf deinen Stoffwechsel zu?",["Emotionen beeinflussen mein Essverhalten stark.","C","active"],["Stress kann alles blockieren.","B","passive"],["Bewegung bringt schnell etwas in Gang.","A","active"],["Umfeld und Reize beeinflussen mein System stark.","D","passive"]],
-["Was wäre für dich vermutlich der wichtigste Gesundheitshebel?",["Mehr Reizreduktion und Erdung.","D","passive"],["Mehr gezielte Bewegung und körperliche Kraft.","A","active"],["Mehr Regeneration und Nervensystem-Ruhe.","B","passive"],["Mehr Grenzen und Selbstfürsorge in Beziehungen.","C","active"]],
-["Wenn du an Wasser, Trinken und Versorgung denkst:",["Ich trinke besser, wenn es Teil eines schönen Rituals ist.","C","active"],["Ich brauche es praktisch in meinen aktiven Alltag eingebaut.","A","active"],["Ich reagiere stark auf Qualität, Umgebung und Körpergefühl.","D","passive"],["Ich muss mich bewusst daran erinnern und langsam regulieren.","B","passive"]],
-["Welche Beschreibung passt am ehesten zu deinem Schlaf?",["Ich brauche Schlaf dringend, um wieder zu funktionieren.","B","passive"],["Ich schlafe besser, wenn ich mich körperlich gut ausgelastet habe.","A","active"],["Reize, Geräusche oder Atmosphäre beeinflussen meinen Schlaf stark.","D","passive"],["Emotionale Themen können meinen Schlaf beeinflussen.","C","active"]],
-["Wenn Konflikt im Raum steht:",["Ich will Harmonie herstellen.","C","active"],["Ich will es direkt klären oder lösen.","A","active"],["Ich spüre die Spannung stark und brauche Abstand.","D","passive"],["Mein Körper spannt sich an oder zieht Energie ab.","B","passive"]],
-["Was fällt dir im Alltag am schwersten?",["Mich von fremden Stimmungen abzugrenzen.","D","passive"],["Rechtzeitig aufzuhören.","A","active"],["Nicht alles körperlich mitzunehmen.","B","passive"],["Mich selbst nicht hintenanzustellen.","C","active"]],
-["Welche Ernährungsidee spricht dich spontan am ehesten an?",["Regelmäßig, beruhigend, gut verträglich.","B","passive"],["Proteinreich, kräftigend, aktivierend.","A","active"],["Einfach, klar, reizarm und intuitiv.","D","passive"],["Alltagstauglich, gemeinschaftlich, liebevoll.","C","active"]],
-["Wenn dein Körper aus der Balance ist, brauchst du zuerst:",["Grenzen und emotionale Klarheit.","C","active"],["Ruhe und Entlastung.","B","passive"],["Bewegung und Richtung.","A","active"],["Abstand und energetische Sortierung.","D","passive"]],
-["Welche Aussage passt am ehesten zu dir?",["Ich fühle mich besser, wenn ich wieder in meinem eigenen Feld bin.","D","passive"],["Ich fühle mich besser, wenn ich Energie körperlich umsetze.","A","active"],["Ich fühle mich besser, wenn mein Nervensystem herunterfährt.","B","passive"],["Ich fühle mich besser, wenn ich mich gesehen und verbunden fühle.","C","active"]],
-["Was ist deine typische Falle?",["Zu lange funktionieren.","B","passive"],["Zu viel geben.","C","active"],["Zu viel aufnehmen.","D","passive"],["Zu viel machen.","A","active"]],
-["Was wäre vermutlich dein nächster sinnvoller Schritt?",["Mehr Selbstfürsorge in Beziehungen bringen.","C","active"],["Mehr Ruhe in Alltag und Essen bringen.","B","passive"],["Mehr Struktur in Bewegung und Kraft bringen.","A","active"],["Mehr Erdung und Abgrenzung ins Leben bringen.","D","passive"]],
-["Welche Aussage beschreibt deinen Umgang mit Lautstärke, Hektik oder vielen Eindrücken?",["Ich brauche danach oft Rückzug oder Stille.","D","passive"],["Ich kann es aushalten, wenn ich danach körperlich Ausgleich habe.","A","active"],["Ich reagiere stärker, wenn zwischen Menschen Spannung entsteht.","C","active"],["Mein Körper reagiert schnell mit Stresszeichen.","B","passive"]],
-["Wenn du dir eine ideale Gesundheitsroutine vorstellst, was darf nicht fehlen?",["Regeneration, Schlaf, Atem und ruhige Mahlzeiten.","B","passive"],["Bewegung, Kraft, Wasser und klare Aktivität.","A","active"],["Gemeinschaft, Freude, Herz und schöne Rituale.","C","active"],["Natur, Erdung, Stille und klare Grenzen zum Außen.","D","passive"]],
-["Wie zeigt dir dein Körper am ehesten, dass etwas nicht passt?",["Durch Unruhe, Druck oder das Gefühl, mich bewegen zu müssen.","A","active"],["Durch Erschöpfung, Spannung, Verdauung oder Schlafprobleme.","B","passive"],["Durch emotionale Schwere oder das Gefühl, zu viel getragen zu haben.","C","active"],["Durch Reizüberflutung, Rückzug oder das Gefühl, nicht bei mir zu sein.","D","passive"]],
-["Welche Richtung fühlt sich für deine nächste Balancephase am stimmigsten an?",["Mehr Kraft und Aktivität aufbauen.","A","active"],["Mehr Ruhe und Regulation zulassen.","B","passive"],["Mehr Verbindung mit klaren Grenzen leben.","C","active"],["Mehr Reizreduktion und Erdung schaffen.","D","passive"]]
-].map(x=>({q:x[0],a:x.slice(1)}));
+A:{
+title:'Typ 1 · Das Aktivierungssystem',core:'Dein Körper kommt häufig über Bewegung, Umsetzung und klare Aktivität in Kraft. Dieses System braucht Energiefluss, körperlichen Ausdruck, Ziele und das Gefühl, voranzukommen.',stress:'Unter Stress wird oft noch mehr gemacht: mehr arbeiten, mehr planen, mehr leisten, mehr bewegen. Das kann kurzfristig stabilisieren, langfristig aber auch dazu führen, dass Körpersignale übergangen werden.',food:'Für dich können nährende, proteinreiche und strukturierte Mahlzeiten gut passen. Fasten wird von vielen Menschen dieses Systems eher gut vertragen, solange es nicht aus Druck oder Selbstkontrolle entsteht. Ein Fastenfenster von 14–16 Stunden kann testweise passen, wenn Energie, Schlaf und Zyklus stabil bleiben.',move:'Krafttraining, Intervalltraining, aktives Wandern, Radfahren oder Sport mit Ziel können sehr unterstützend sein. Wichtig ist nicht nur Leistung, sondern bewusste Regeneration danach.',rhythm:'Wasser, Mineralien, regelmäßige Versorgung und klare Routinen gehören praktisch in deinen Alltag.',watch:'Deine Falle: immer noch mehr machen. Dein Fokus: Kraft aufbauen, aber Erholung bewusst einplanen.'}
+,B:{
+title:'Typ 2 · Das Regulationssystem',core:'Dein Körper reagiert stark auf Stress, Druck und Dauerbelastung. Schlaf, Verdauung, Hormone, Energie, Spannung oder Erschöpfung können frühe Signale sein.',stress:'Unter Stress funktionierst du möglicherweise weiter, obwohl dein Körper längst spricht. Dein System braucht zuerst Entlastung, bevor echte Kraft zurückkommt.',food:'Für dich passen häufig regelmäßige, eher kleinere Mahlzeiten, warme und gut verträgliche Lebensmittel, ausreichend Ballaststoffe und ruhiges Essen. Langes Fasten kann zusätzlichen Stress erzeugen. Wenn du Fasten testen möchtest, beginne eher sanft mit 10–12 Stunden über Nacht und beobachte Energie, Stimmung und Schlaf.',move:'Yoga, Spaziergänge, Mobilität, Atemarbeit, sanftes Krafttraining und beruhigende Routinen können dein Nervensystem unterstützen.',rhythm:'Schlaf, Pausen, Wärme, Reizreduktion, regelmäßiges Trinken und bewusstes Essen sind zentrale Stellschrauben.',watch:'Deine Falle: zu lange funktionieren. Dein Fokus: erst regulieren, dann entscheiden.'}
+,C:{
+title:'Typ 3 · Das Verbindungssystem',core:'Dein Körper ist stark mit Beziehungen, Harmonie und Zugehörigkeit verbunden. Verbindung kann nähren, aber emotionale Belastung kann auch körperlich schwer machen.',stress:'Unter Stress kümmerst du dich vielleicht zuerst um andere, hältst Harmonie oder übernimmst Verantwortung. Dein Körper trägt dann oft mehr, als du merkst.',food:'Essen darf für dich schön, gemeinschaftlich und liebevoll sein. Gemeinsame Mahlzeiten können stärkend wirken. Gleichzeitig lohnt es sich, emotionales Essen und Essen aus Anpassung bewusst zu beobachten.',move:'Tanz, Gruppenbewegung, Spaziergänge mit Menschen, gemeinsamer Sport oder liebevolle Routinen können dich gut unterstützen.',rhythm:'Dein Körper braucht Selbstfürsorge als festen Bestandteil des Tages.',watch:'Deine Falle: zu viel geben. Dein Fokus: Verbindung leben, ohne dich selbst zu verlassen.'}
+,D:{
+title:'Typ 4 · Das Resonanzsystem',core:'Dein Körper reagiert stark auf Umfeld, Atmosphäre, Räume, Menschen und feine Reize. Du nimmst oft mehr auf, als dir bewusst ist.',stress:'Unter Stress entstehen häufig Rückzug, Reizüberflutung, Erschöpfung oder das Gefühl, nicht mehr klar bei dir zu sein.',food:'Für dich passen oft einfache, klare und reizarm gestaltete Mahlzeiten. Ruhiges Essen, wenig Ablenkung, kein Streit und eine angenehme Atmosphäre sind besonders wichtig. Fasten sollte nicht aus Härte entstehen, sondern nur, wenn dein System dadurch wirklich ruhiger wird.',move:'Natur, Spaziergänge, Erdung, ruhige Bewegung, bewusste Atmung und regelmäßige Auszeiten können sehr hilfreich sein.',rhythm:'Orte, Menschen, Geräusche, Licht, Räume und Atmosphäre sind für dich echte Gesundheitsfaktoren.',watch:'Deine Falle: zu viel aufnehmen. Dein Fokus: unterscheiden, was zu dir gehört und was aus deinem Umfeld kommt.'}
+}
+;
+
+
+const questions=[['Wenn dein Körper überlastet ist, welches Muster erkennst du am ehesten?',['Ich werde noch aktiver und mache weiter.','A','active'],
+['Mein Körper sendet deutliche Signale.','B','passive'],
+['Ich kümmere mich trotzdem um andere.','C','active'],
+['Ich ziehe mich zurück oder brauche Abstand.','D','passive']],
+['Welche Essenssituation tut dir am besten?',['Gemeinschaftlich, lebendig und positiv.','A','active'],
+['Ruhig, langsam und ohne Druck.','B','passive'],
+['Liebevoll, verbunden und harmonisch.','C','active'],
+['Still, reizarm und atmosphärisch angenehm.','D','passive']],
+['Was passiert bei Schlafmangel am ehesten?',['Ich funktioniere weiter, werde aber angespannter.','A','active'],
+['Mein ganzes System gerät schneller aus Balance.','B','passive'],
+['Ich werde emotional empfindlicher mit Menschen.','C','active'],
+['Ich bin schneller reizüberflutet und brauche Rückzug.','D','passive']],
+['Welche Bewegung unterstützt dich am meisten?',['Kraft, Aktivität, klare Ziele.','A','active'],
+['Sanft, regulierend, beruhigend.','B','passive'],
+['Gemeinsam, rhythmisch, freudvoll.','C','active'],
+['Natur, Erdung, Spazieren, Stille.','D','passive']],
+['Wie reagierst du auf längere Essenspausen?',['Oft stabil oder sogar klarer.','A','active'],
+['Eher gestresst, zittrig, müde oder gereizt.','B','passive'],
+['Es hängt stark von Stimmung und Alltag ab.','C','active'],
+['Sehr feinfühlig und unterschiedlich je nach Umfeld.','D','passive']],
+['Was ist dein häufigster Körper-Stressauslöser?',['Zu wenig Bewegung oder keine Richtung.','A','active'],
+['Zu viel Druck und zu wenig Erholung.','B','passive'],
+['Konflikte, Erwartungen oder emotionale Last.','C','active'],
+['Lautstärke, Atmosphäre, Menschen oder Reize.','D','passive']],
+['Wenn du wieder in Balance kommen willst, was hilft zuerst?',['Tun, strukturieren, körperlich aktiv werden.','A','active'],
+['Schlafen, atmen, herunterfahren, entlasten.','B','passive'],
+['Reden, klären, verbinden, Grenzen setzen.','C','active'],
+['Alleinsein, Natur, Stille, energetisch sortieren.','D','passive']],
+['Welche Ernährung spricht deinen Körper intuitiv am ehesten an?',['Proteinreich, kräftigend, klar strukturiert.','A','active'],
+['Regelmäßig, warm, beruhigend, gut verträglich.','B','passive'],
+['Alltagstauglich, schön, gemeinschaftlich, liebevoll.','C','active'],
+['Einfach, reizarm, klar und intuitiv.','D','passive']],
+['Welche Aussage passt am ehesten zu deinem Stoffwechsel?',['Bewegung bringt schnell etwas in Gang.','A','active'],
+['Stress kann alles blockieren.','B','passive'],
+['Emotionen beeinflussen mein Essen stark.','C','active'],
+['Umfeld und Reize beeinflussen mein System stark.','D','passive']],
+['Was ist deine typische Falle?',['Zu viel machen.','A','active'],
+['Zu lange funktionieren.','B','passive'],
+['Zu viel geben.','C','active'],
+['Zu viel aufnehmen.','D','passive']],
+['Was braucht dein Körper bei Wasser und Versorgung?',['Praktische Routinen im aktiven Alltag.','A','active'],
+['Bewusstes, regelmäßiges Trinken zur Regulation.','B','passive'],
+['Schöne Rituale, die sich angenehm anfühlen.','C','active'],
+['Gute Qualität, Ruhe und feines Körpergefühl.','D','passive']],
+['Wie zeigt dein Körper, dass etwas nicht passt?',['Unruhe, Druck, Bewegungsdrang oder Gereiztheit.','A','active'],
+['Erschöpfung, Verdauung, Schlaf oder Hormonthemen.','B','passive'],
+['Emotionale Schwere oder das Gefühl, zu viel getragen zu haben.','C','active'],
+['Reizüberflutung, Rückzug oder nicht bei mir sein.','D','passive']],
+['Welche Tagesstruktur tut dir gut?',['Klarer Plan, Bewegung, Umsetzung.','A','active'],
+['Pausen, Rhythmus, Ruheinseln.','B','passive'],
+['Verbindung, Austausch, schöne gemeinsame Momente.','C','active'],
+['Freiraum, Stille, Natur, wenig Reize.','D','passive']],
+['Was raubt dir am meisten Energie?',['Stillstand, fehlende Ziele, zu wenig Aktivität.','A','active'],
+['Dauerstress, Druck, zu wenig Schlaf.','B','passive'],
+['Ungleichgewicht in Beziehungen oder zu viel Verantwortung.','C','active'],
+['Zu viele Eindrücke, Menschen, Geräusche oder Stimmungen.','D','passive']],
+['Was wäre dein sinnvollstes 14-Tage-Experiment?',['Gezielte Bewegung und Kraftaufbau testen.','A','active'],
+['Regelmäßiges Essen, Schlaf und Reizreduktion testen.','B','passive'],
+['Grenzen, Selbstfürsorge und bewusstes gemeinsames Essen testen.','C','active'],
+['Stille, Natur, Erdung und reizarmes Essen testen.','D','passive']],
+['Welche Aussage fühlt sich am stimmigsten an?',['Mein Körper braucht Energie in Bewegung.','A','active'],
+['Mein Körper braucht zuerst Regulation.','B','passive'],
+['Mein Körper braucht Verbindung mit klaren Grenzen.','C','active'],
+['Mein Körper braucht ein ruhiges, klares Feld.','D','passive']]].map(x=>({
+q:x[0],
+a:x.slice(1)}
+));
+
 let current=0,answers=[];
-function showPage(id){["start","intro","prepare","quiz","results"].forEach(x=>document.getElementById(x).classList.add("hidden"));document.getElementById(id).classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})}
-function startQuiz(){current=0;answers=new Array(questions.length).fill(null);showPage("quiz");renderQuestion()}
-function renderQuestion(){const q=questions[current];document.getElementById("qmeta").textContent=`Frage ${current+1} von ${questions.length}`;document.getElementById("bar").style.width=`${Math.round(current/questions.length*100)}%`;document.getElementById("qtitle").textContent=q.q;const box=document.getElementById("answers");box.innerHTML="";q.a.forEach((opt,i)=>{const label=document.createElement("label");label.className="answer"+(answers[current]===i?" selected":"");label.innerHTML=`<input type="radio" name="answer" ${answers[current]===i?"checked":""}/> ${opt[0]}`;label.onclick=()=>{answers[current]=i;renderQuestion()};box.appendChild(label)})}
-function nextQuestion(){if(answers[current]===null){alert("Bitte wähle eine Antwort aus.");return} if(current<questions.length-1){current++;renderQuestion()}else showResults()}
-function prevQuestion(){if(current>0){current--;renderQuestion()}else showPage("prepare")}
-function percent(n,t){return t?Math.round(n/t*100):0}
-function val(id){return document.getElementById(id).value}
-function showResults(){const scores={A:0,B:0,C:0,D:0},reg={active:0,passive:0};answers.forEach((ans,i)=>{const s=questions[i].a[ans];scores[s[1]]++;reg[s[2]]++});const total=questions.length,sorted=Object.entries(scores).sort((a,b)=>b[1]-a[1]),main=sorted[0][0],second=sorted[1][0];const regType=reg.active>=reg.passive?"aktive Regulation":"passive Regulation";const regText=reg.active>=reg.passive?"Dein System verarbeitet Belastung eher über Bewegung, Ausdruck, Kontakt, Handlung oder Aktivität. Achte darauf, ob Aktivität dich wirklich reguliert oder ob du dich dadurch nur ablenkst.":"Dein System verarbeitet Belastung eher über Ruhe, Rückzug, Stille, Schlaf, Entlastung und Reizreduktion. Achte darauf, ob Rückzug dich wirklich reguliert oder ob du dich dadurch isolierst.";const bars=Object.keys(scores).map(k=>`<div class="score-row"><div class="score-head"><span>${typeNames[k]}</span><strong>${percent(scores[k],total)}%</strong></div><div class="score-line"><div class="score-fill" style="width:${percent(scores[k],total)}%"></div></div></div>`).join("");const all=Object.keys(descriptions).map(k=>`<div class="result-box"><h3>${descriptions[k].title}</h3><p>${descriptions[k].core}</p><p><strong>Stress:</strong> ${descriptions[k].stress}</p><p><strong>Ernährung:</strong> ${descriptions[k].food}</p><p><strong>Bewegung:</strong> ${descriptions[k].move}</p><p><strong>Rhythmus:</strong> ${descriptions[k].rhythm}</p><p><strong>Entwicklungsschlüssel:</strong> ${descriptions[k].watch}</p></div>`).join("");document.getElementById("resultContent").innerHTML=`<div class="result-grid"><div class="result-box"><h3>Dein Hauptsystem</h3><p><strong>${typeNames[main]}</strong></p><p>${descriptions[main].core}</p></div><div class="result-box"><h3>Dein Nebensystem</h3><p><strong>${typeNames[second]}</strong></p><p>${descriptions[second].core}</p></div></div><h3 class="section-title">Deine prozentuale Verteilung</h3>${bars}<h3 class="section-title">Deine Regulationsform</h3><p><span class="pill">${regType}</span></p><p>${regText}</p><h3 class="section-title">Deine wichtigsten Körperimpulse</h3><div class="result-box"><h3>${descriptions[main].title}</h3><p><strong>Körper & Stress:</strong> ${descriptions[main].stress}</p><p><strong>Ernährung & Essen:</strong> ${descriptions[main].food}</p><p><strong>Bewegung:</strong> ${descriptions[main].move}</p><p><strong>Schlaf, Wasser & Rhythmus:</strong> ${descriptions[main].rhythm}</p><p><strong>Dein Fokus:</strong> ${descriptions[main].watch}</p></div><h3 class="section-title">Mischtypen</h3><p>Die meisten Menschen sind Mischtypen. Deshalb ist nicht nur dein Hauptsystem wichtig, sondern auch dein Nebensystem. Deine stärkste Mischung ist aktuell: <strong>${typeShort[main]} + ${typeShort[second]}</strong>.</p><h3 class="section-title">Verbindung zu deinen bisherigen Ergebnissen</h3><p>Deine Angaben aus Teil 1, Human Design, Ayurveda und Blutgruppe dienen hier als Reflexionsbrücke. Sie werden nicht als feste Wahrheit gewertet, sondern helfen dir, Parallelen zwischen verschiedenen Systemen zu erkennen.</p><p><span class="pill">Teil 1: ${val("donePart1")}</span><span class="pill">Hauptessenz: ${val("essenz1")}</span><span class="pill">Nebenessenz: ${val("essenz2")}</span><span class="pill">Human Design: ${val("hd")}</span><span class="pill">Ayurveda: ${val("ayur")}</span><span class="pill">Blutgruppe: ${val("blood")}</span></p><h3 class="section-title">Alle vier Körpersysteme im Überblick</h3>${all}<div class="note"><strong>Abschlussimpuls:</strong> Frage nicht nur: Welcher Typ bin ich? Frage vor allem: Was braucht mein Körper, damit es ihm gut geht? Dieser Kompass möchte dich nicht festlegen. Er möchte dir helfen, dich selbst besser zu beobachten und bewusster für dich zu sorgen.</div>`;showPage("results")}
-function restart(){current=0;answers=[];showPage("start")}
+
+function showPage(id){
+['start','intro','prepare','quiz','reflect','results'].forEach(x=>document.getElementById(x).classList.add('hidden'));
+document.getElementById(id).classList.remove('hidden');
+window.scrollTo({
+top:0,behavior:'smooth'}
+)}
+
+function startQuiz(){
+current=0;
+answers=new Array(questions.length).fill(null);
+showPage('quiz');
+renderQuestion()}
+
+function renderQuestion(){
+
+const q=questions[current];
+document.getElementById('qmeta').textContent=`Frage ${
+current+1}
+ von ${
+questions.length}
+`;
+document.getElementById('bar').style.width=`${
+Math.round(current/questions.length*100)}
+%`;
+document.getElementById('qtitle').textContent=q.q;
+
+const box=document.getElementById('answers');
+box.innerHTML='';
+q.a.forEach((opt,i)=>{
+
+const label=document.createElement('label');
+label.className='answer'+(answers[current]===i?' selected':'');
+label.innerHTML=`<input type="radio" name="answer" ${
+answers[current]===i?'checked':''}
+/> ${
+opt[0]}
+`;
+label.onclick=()=>{
+answers[current]=i;
+renderQuestion()}
+;
+box.appendChild(label)}
+)}
+
+function nextQuestion(){
+if(answers[current]===null){
+alert('Bitte wähle eine Antwort aus.');
+return}
+if(current<questions.length-1){
+current++;
+renderQuestion()}
+else showPage('reflect')}
+
+function prevQuestion(){
+if(current>0){
+current--;
+renderQuestion()}
+else showPage('prepare')}
+
+function percent(n,t){
+return t?Math.round(n/t*100):0}
+
+function val(id){
+return document.getElementById(id).value||''}
+
+function nameText(){
+return val('name').trim()||'du'}
+
+
+function ayurText(a){
+if(a==='unbekannt')return'Du hast keine Ayurveda-Tendenz angegeben. Falls du sie später kennst, kann sie eine spannende zusätzliche Reflexionsbrücke sein.';
+let base={
+Vata:'Vata steht häufig für Bewegung, Nervensystem, Ideen, Leichtigkeit und Sensibilität. Wenn Vata aus der Balance gerät, können Unruhe, Schlafprobleme oder Verdauungsschwankungen entstehen. Manche Menschen mit Vata-Prägung entwickeln im Laufe der Zeit Kapha-Überschuss, wenn das System Sicherheit sucht und Bewegung abnimmt.',Pitta:'Pitta steht häufig für Feuer, Leistung, Klarheit, Zielkraft und Umsetzung. Wenn Pitta überlastet wird oder nicht mehr in gesunder Kraft gelebt wird, kann der Körper in Kapha-Muster rutschen: Schwere, Wassereinlagerung, Gewichtszunahme, Trägheit oder Entzündungsthemen.',Kapha:'Kapha steht für Stabilität, Substanz, Ruhe und Ausdauer. In Balance ist Kapha enorm kraftvoll. Im Überschuss kann es sich zeigen durch langsamen Stoffwechsel, Schwere, Antriebsmangel, Wasser, Gewicht oder einen trägen Start in den Tag.','Vata-Pitta':'Vata-Pitta verbindet Nervensystem, Geschwindigkeit, Ideen und innere Hitze. Unter Stress kann es schnell zu Überforderung, Schlafproblemen, Reizbarkeit oder Erschöpfung kommen.','Pitta-Kapha':'Pitta-Kapha verbindet Kraft, Leistung und Substanz. Wenn die ursprüngliche Pitta-Kraft nicht mehr gelebt wird, kann Kapha überwiegen: weniger Bewegung, mehr Schwere, Gewicht, Wasser oder Trägheit.','Vata-Kapha':'Vata-Kapha kann sich widersprüchlich anfühlen: innerlich fein, beweglich und sensibel, körperlich aber manchmal schwer, träge oder blockiert. Hier ist rhythmische Bewegung oft wichtiger als extreme Leistung.','Tridosha / Mischtyp':'Bei Mischtypen ist besonders wichtig zu beobachten, welches Element ursprünglich stark war und welches aktuell im Überschuss ist. Die meisten Menschen mit Beschwerden sind keine reinen Typen, sondern erleben Verschiebungen durch Stress, Alter, Alltag, Schlaf, Ernährung und Lebensumstände.'}
+;
+return base[a]||''}
+
+
+function hdText(h){
+if(h==='unbekannt')return'Du hast keinen Human-Design-Typ angegeben.';
+let t={
+Projektor:'Als Projektor kann es besonders wichtig sein, nicht dauerhaft wie ein Generator zu funktionieren. Essen in Ruhe, gute Umgebung, Pausen, Qualität statt Quantität und Regeneration vor Leistung können zentrale Körperimpulse sein.',Generator:'Als Generator kann dein Körper häufig über Reaktion, Freude und echte körperliche Aktivität Energie aufbauen. Wichtig ist, dass du nicht einfach nur funktionierst, sondern auf das reagierst, was wirklich Kraft gibt.','Manifestierender Generator':'Als Manifestierender Generator kann dein Körper schnelle Wechsel, Bewegung und Vielfalt brauchen. Gleichzeitig ist wichtig, nicht dauerhaft im Überholen der eigenen Signale zu leben.',Manifestor:'Als Manifestor kann dein Körper starke Impulse und anschließende Ruhephasen brauchen. Essen, Bewegung und Alltag dürfen deiner inneren Welle folgen, statt dich dauerhaft anzupassen.',Reflektor:'Als Reflektor kann dein Körper besonders stark auf Umfeld, Räume, Menschen und Rhythmen reagieren. Reizarmut, Natur, klare Umgebung und Zeit für Wahrnehmung können sehr wichtig sein.'}
+;
+return t[h]||''}
+
+
+function bloodText(b,r){
+let s='';
+if(b==='unbekannt')s+='Du hast keine Blutgruppe angegeben. Wenn du sie später kennst, kann sie als weiterer Beobachtungsimpuls spannend sein. ';
+else{
+let m={
+A:'Bei Blutgruppe A zeigen viele Erfahrungswerte eine stärkere Sensibilität für Stress, Struktur, Verdauung und Regeneration. Ruhiges Essen, regelmäßige Mahlzeiten und ein achtsamer Umgang mit Belastung können besonders wichtig sein.',B:'Bei Blutgruppe B wird häufig eine gewisse Anpassungsfähigkeit beschrieben. Viele Menschen beobachten, dass Rhythmus, gute Verdauung und Ausgleich zwischen Aktivität und Ruhe wichtig sind.',AB:'Blutgruppe AB wird oft als Mischfeld erlebt: nicht ganz A, nicht ganz B. Viele Menschen passen in keine klare Schublade und brauchen individuelle Beobachtung statt starre Regeln.',0:'Bei Blutgruppe 0 berichten viele von stärkerem Bezug zu Kraft, Aktivität, Protein und Bewegung. Gleichzeitig ist entscheidend, ob Stress und Lebensumstände diese Energie wirklich zulassen.'}
+;
+s+=m[b]+' '}
+if(r==='negativ')s+='Zum Rhesusfaktor negativ: Viele Menschen mit negativem Rhesusfaktor berichten von einer erhöhten Sensibilität ihres Systems. In Beobachtungen zeigen sich immer wieder Themen wie stärkere Reaktionen auf Stress, Entzündungsneigung, Erschöpfungsphasen, ein sensibleres Immunsystem oder stärkere Reaktionen auf Belastungen. Es trifft nicht auf jeden zu, kann aber ein wertvoller Hinweis sein, dein Immunsystem, Mikronährstoffe, Schlaf und Regeneration besonders ernst zu nehmen.';
+else if(r==='positiv')s+='Zum Rhesusfaktor positiv: Viele Menschen mit positivem Rhesusfaktor wirken im Alltag robuster gegenüber Belastungen. Auch hier gilt: Beobachte dein eigenes System, denn Lebensstil, Stress, Schlaf und Ernährung bleiben entscheidend.';
+return s}
+
+
+function showResults(){
+
+const scores={
+A:0,B:0,C:0,D:0}
+,reg={
+active:0,passive:0}
+;
+answers.forEach((ans,i)=>{
+
+const s=questions[i].a[ans];
+scores[s[1]]++;
+reg[s[2]]++}
+);
+
+const total=questions.length,sorted=Object.entries(scores).sort((a,b)=>b[1]-a[1]),
+main=sorted[0][0],
+second=sorted[1][0],
+nm=nameText();
+document.getElementById('personalLead').textContent=`Liebe ${
+nm}
+, hier ist deine persönliche Körper-Auswertung auf Grundlage deiner Antworten.`;
+
+const bars=Object.keys(scores).map(k=>`<div class="score-row">
+<div class="score-head">
+<span>${
+typeNames[k]}
+</span>
+<strong>${
+percent(scores[k],
+total)}
+%</strong>
+</div>
+<div class="score-line">
+<div class="score-fill" style="width:${
+percent(scores[k],
+total)}
+%">
+</div>
+</div>
+</div>`).join('');
+
+const regType=reg.active>=reg.passive?'aktive Regulation':'passive Regulation',regText=reg.active>=reg.passive?'Dein System verarbeitet Belastung eher über Bewegung, Ausdruck, Kontakt, Handlung oder Aktivität. Wichtig ist zu unterscheiden: Reguliert dich Aktivität wirklich – oder lenkt sie dich nur ab?':'Dein System verarbeitet Belastung eher über Ruhe, Rückzug, Stille, Schlaf, Entlastung und Reizreduktion. Wichtig ist zu unterscheiden: Reguliert dich Rückzug wirklich – oder isolierst du dich dadurch?';
+document.getElementById('resultContent').innerHTML=`<div class="result-grid">
+<div class="result-box">
+<h3>Dein Hauptsystem</h3>
+<p>
+<strong>${
+typeNames[main]}
+</strong>
+</p>
+<p>${
+descriptions[main].core}
+</p>
+</div>
+<div class="result-box">
+<h3>Dein Nebensystem</h3>
+<p>
+<strong>${
+typeNames[second]}
+</strong>
+</p>
+<p>${
+descriptions[second].core}
+</p>
+</div>
+</div>
+<h3 class="section-title">Deine prozentuale Verteilung</h3>${
+bars}
+<h3 class="section-title">Deine Regulationsform</h3>
+<p>
+<span class="pill">${
+regType}
+</span>
+</p>
+<p>${
+regText}
+</p>
+<h3 class="section-title">Dein Körperprofil</h3>
+<div class="result-box">
+<h3>${
+descriptions[main].title}
+</h3>
+<p>
+<strong>Stress:</strong> ${
+descriptions[main].stress}
+</p>
+<p>
+<strong>Ernährung & Fasten:</strong> ${
+descriptions[main].food}
+</p>
+<p>
+<strong>Bewegung:</strong> ${
+descriptions[main].move}
+</p>
+<p>
+<strong>Schlaf, Wasser & Rhythmus:</strong> ${
+descriptions[main].rhythm}
+</p>
+<p>
+<strong>Dein Fokus:</strong> ${
+descriptions[main].watch}
+</p>
+</div>
+<h3 class="section-title">Dein Mischtyp</h3>
+<p>Deine stärkste Mischung ist aktuell: <strong>${
+typeShort[main]}
+ + ${
+typeShort[second]}
+</strong>. Genau hier entsteht oft der eigentliche Schlüssel. Dein Hauptsystem zeigt, was dich am stärksten prägt. Dein Nebensystem zeigt, was im Alltag zusätzlich mitwirkt.</p>
+<h3 class="section-title">Verbindung zu Human Design</h3>
+<p>${
+hdText(val('hd'))}
+</p>
+<h3 class="section-title">Verbindung zu Ayurveda</h3>
+<p>${
+ayurText(val('ayur'))}
+</p>
+<h3 class="section-title">Verbindung zu Blutgruppe & Rhesusfaktor</h3>
+<p>${
+bloodText(val('blood'),
+val('rhesus'))}
+</p>
+<h3 class="section-title">Deine 14-Tage-Beobachtung</h3>
+<ul>
+<li>Iss 14 Tage bewusst in der Atmosphäre, die zu deinem Ergebnis passt.</li>
+<li>Beobachte, ob Fasten dich stärkt oder stresst.</li>
+<li>Notiere täglich Energie, Schlaf, Verdauung, Stimmung und Wassereinlagerungen.</li>
+<li>Teste Bewegung nicht als Druck, sondern als Regulation.</li>
+<li>Frage dich jeden Abend: Was hat mein Körper heute wirklich gebraucht?</li>
+</ul>
+<h3 class="section-title">Deine eigene Erkenntnis</h3>
+<p>
+<strong>Meine wichtigste Erkenntnis:</strong> ${
+val('insight')||'—'}
+</p>
+<p>
+<strong>Mein nächster kleiner Schritt:</strong> ${
+val('step')||'—'}
+</p>
+<div class="print-footer">
+<h3>Zum Abschluss, liebe ${
+nm}
+</h3>
+<p>Stell dir vor, man hätte dir am Tag deiner Geburt einen Menschen anvertraut. Einen Menschen, um den du dich dein ganzes Leben kümmern solltest. Du würdest wahrscheinlich darauf achten, dass dieser Mensch genug schläft, gutes Essen bekommt, sich bewegt, nicht dauerhaft über seine Grenzen geht und sich sicher fühlt.</p>
+<p>Vielleicht suchen wir oft im Außen nach genau diesem Menschen. Nach jemandem, der uns versteht, begleitet und sich um uns kümmert. Doch vielleicht war dieser Mensch die ganze Zeit schon da.</p>
+<p>
+<strong>Vielleicht bist du dieser Mensch.</strong>
+</p>
+<p>Dieser Kompass möchte dir keine Wahrheit aufzwingen. Er möchte dir helfen, deinen Körper besser zu verstehen und dich Schritt für Schritt wieder an dich selbst zu erinnern.</p>
+</div>`;
+showPage('results')}
+
+function restart(){
+current=0;
+answers=[];
+showPage('start')}
+
 </script>
-</body></html>
+</body>
+</html>
