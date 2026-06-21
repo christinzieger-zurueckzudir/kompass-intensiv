@@ -42,7 +42,7 @@ textarea{min-height:82px}
 .score-row{margin:12px 0}
 .score-head{display:flex;justify-content:space-between;gap:12px;font-size:.95rem}
 .score-line{height:10px;background:#efe2d0;border-radius:999px;overflow:hidden;margin-top:6px}
-.score-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2)}
+.score-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 .section-title{border-top:1px solid var(--line);padding-top:22px;margin-top:26px}
 .print-footer{margin-top:30px;padding:18px;background:#f5eadb;border-radius:18px;border-left:4px solid var(--accent)}
 ul{padding-left:22px}li{margin:6px 0}
@@ -228,7 +228,7 @@ document.getElementById("resultContent").innerHTML=`
 <h3 class="section-title">Verbindung zu Human Design</h3><p>${hdText(val("hd"))}</p>
 <h3 class="section-title">Verbindung zu Ayurveda</h3><p>${ayurText(val("ayur"))}</p>
 <h3 class="section-title">Verbindung zu Blutgruppe & Rhesusfaktor</h3><p>${bloodText(val("blood"),val("rhesus"))}</p>
-<h3 class="section-title">Deine 14-Tage-Beobachtung</h3><ul><li>Iss 14 Tage bewusst in der Atmosphäre, die zu deinem Ergebnis passt.</li><li>Beobachte, ob Fasten dich stärkt oder stresst.</li><li>Notiere täglich Energie, Schlaf, Verdauung, Stimmung und Wassereinlagerungen.</li><li>Teste Bewegung nicht als Druck, sondern als Regulation.</li><li>Frage dich jeden Abend: Was hat mein Körper heute wirklich gebraucht?</li></ul>
+<h3 class="section-title">Deine 30-Tage-Beobachtung</h3><ul><li>Iss bewusst in der Atmosphäre, die zu deinem Ergebnis passt.</li><li>Beobachte, ob Fasten dich stärkt oder stresst.</li><li>Notiere täglich Energie, Schlaf, Verdauung, Stimmung und Wassereinlagerungen.</li><li>Teste Bewegung nicht als Druck, sondern als Regulation.</li><li>Achte zusätzlich auf Wasser, Mineralien, Protein, Ballaststoffe und regelmäßige Mahlzeiten.</li><li>Frage dich jeden Abend: Was hat mein Körper heute wirklich gebraucht?</li></ul>
 <h3 class="section-title">Deine eigene Erkenntnis</h3><p><strong>Meine wichtigste Erkenntnis:</strong> ${val("insight")||"—"}</p><p><strong>Mein nächster kleiner Schritt:</strong> ${val("step")||"—"}</p>
 <div class="print-footer"><h3>Zum Abschluss, liebe ${nm}</h3><p>Stell dir vor, man hätte dir am Tag deiner Geburt einen Menschen anvertraut. Einen Menschen, um den du dich dein ganzes Leben kümmern solltest. Du würdest wahrscheinlich darauf achten, dass dieser Mensch genug schläft, gutes Essen bekommt, sich bewegt, nicht dauerhaft über seine Grenzen geht und sich sicher fühlt.</p><p>Vielleicht suchen wir oft im Außen nach genau diesem Menschen. Nach jemandem, der uns versteht, begleitet und sich um uns kümmert. Doch vielleicht war dieser Mensch die ganze Zeit schon da.</p><p><strong>Vielleicht bist du dieser Mensch.</strong></p><p>Dieser Kompass möchte dir keine Wahrheit aufzwingen. Er möchte dir helfen, deinen Körper besser zu verstehen und dich Schritt für Schritt wieder an dich selbst zu erinnern.</p></div>`;
 showPage("results");
