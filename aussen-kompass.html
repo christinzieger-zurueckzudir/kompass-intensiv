@@ -79,6 +79,65 @@ time:['Blocke täglich 15 Minuten unverhandelbare Zeit für dich.','Streiche ein
 growth:['Lerne oder vertiefe etwas, das dich wirklich interessiert.','Schreibe auf, welche Version von dir gerade entstehen möchte.','Setze eine Erkenntnis praktisch um, statt nur neues Wissen zu sammeln.'],
 meaning:['Schreibe drei Sätze: Wofür stehe ich? Was ist mir wichtig? Was möchte ich weitergeben?','Tue eine kleine Handlung, die deinem Beitrag entspricht.','Verbinde dich 10 Minuten mit deiner größeren Vision, ohne sofort einen perfekten Plan zu machen.']
 };
+
+function areaPersonalText(k,p){
+  const data={
+    work:[
+      `Dein Wert zeigt, dass Arbeit & Beruf aktuell ein sehr präsenter und tragender Bereich in deinem Leben ist. Hier fließt Energie, Verantwortung und Gestaltungskraft. Wichtig ist, ehrlich zu prüfen, ob dieser Bereich dich wirklich nährt oder ob du ihn vor allem stark hältst, weil du es kannst.`,
+      `Dein Wert zeigt, dass dein berufliches Feld grundsätzlich trägt. Es geht hier wahrscheinlich nicht um einen kompletten Umbruch, sondern eher um Feinjustierung: mehr Klarheit, mehr passende Aufgaben, mehr Raum für deine Talente und weniger Funktionieren aus Gewohnheit.`,
+      `Dein Wert zeigt, dass Arbeit & Beruf weder leer noch vollständig stimmig wirkt. Es gibt Potenzial und Kraft, aber vermutlich auch Reibung. Vielleicht ist schon vieles richtig – nur noch nicht in der Form, die wirklich zu deiner aktuellen Lebensphase passt.`,
+      `Dein Wert zeigt, dass Arbeit & Beruf gerade mehr Energie kosten könnte, als er zurückgibt. Das ist kein Scheitern, sondern ein Hinweis: Hier darfst du prüfen, ob deine Aufgaben, Rollen oder Strukturen noch zu deiner inneren Entwicklung passen.`
+    ],
+    relationships:[
+      `Dein Wert zeigt, dass Beziehungen aktuell ein starkes Feld in deinem Leben sind. Verbindung, Nähe oder Verantwortung spielen eine große Rolle. Achte darauf, ob du dich in diesen Beziehungen wirklich gesehen fühlst – oder ob du vor allem viel hältst, gibst und ausgleichst.`,
+      `Dein Wert zeigt, dass Beziehungen grundsätzlich Kraft geben, aber noch bewusster gestaltet werden dürfen. Es geht weniger um große Veränderung, sondern mehr um Ehrlichkeit, Grenzen und echte emotionale Sicherheit.`,
+      `Dein Wert zeigt, dass Beziehungen gemischt wirken: Es gibt Nähe und Verbindung, aber vermutlich auch Reibung, alte Rollen oder unausgesprochene Bedürfnisse. Genau hier lohnt sich ein ehrlicher Blick.`,
+      `Dein Wert zeigt, dass Beziehungen gerade ein Bereich sein könnten, der Aufmerksamkeit braucht. Vielleicht geht es um Grenzen, um unausgesprochene Wahrheiten oder um die Frage, wo du dich selbst in Verbindung verlierst.`
+    ],
+    environment:[
+      `Dein Wert zeigt, dass dein Umfeld und Zuhause aktuell viel Kraft oder Bedeutung haben. Das kann ein echter Stabilitätsanker sein. Gleichzeitig lohnt sich die Frage, ob dein Raum dich wirklich nährt oder ob du ihn vor allem funktional gut organisiert hast.`,
+      `Dein Wert zeigt, dass dein Umfeld grundsätzlich trägt. Hier geht es eher um Verfeinerung: mehr Ruhe, mehr Schönheit, mehr Natur, mehr Ordnung oder mehr Rückzugsraum.`,
+      `Dein Wert zeigt, dass dein Umfeld gemischt wirkt. Es gibt sicher Bereiche, die dich halten, aber auch Punkte, die dein Nervensystem belasten können: Reize, Lärm, Unordnung, Enge oder fehlende Rückzugsmöglichkeiten.`,
+      `Dein Wert zeigt, dass dein Umfeld gerade ein Energiefeld sein könnte, das dich weniger trägt, als du brauchst. Das muss nicht sofort einen großen Umbruch bedeuten. Manchmal beginnt Veränderung mit einem einzigen Raum, einer Ecke, mehr Licht oder mehr Schutz deiner Energie.`
+    ],
+    money:[
+      `Dein Wert zeigt, dass Finanzen aktuell eher Klarheit, Handlungsspielraum oder Sicherheit geben. Wichtig ist trotzdem, Geld nicht nur als Zahl zu sehen, sondern als Frage: Unterstützt es deine Freiheit und deine Werte?`,
+      `Dein Wert zeigt, dass bei Finanzen grundsätzlich Stabilität vorhanden ist, aber noch mehr Ruhe, Klarheit oder bewusste Gestaltung entstehen darf. Hier geht es eher um Ordnung und Ausrichtung als um Druck.`,
+      `Dein Wert zeigt, dass Geld weder komplett blockiert noch völlig frei wirkt. Es gibt Handlungsspielraum, aber vermutlich auch Unsicherheit, offene Themen oder alte Glaubenssätze, die mit hineinspielen.`,
+      `Dein Wert zeigt, dass Finanzen gerade Druck, Enge oder Unsicherheit auslösen könnten. Das ist kein Urteil über dich. Es zeigt nur, dass dieser Bereich mehr Klarheit, Ruhe und konkrete Schritte braucht.`
+    ],
+    health:[
+      `Dein Wert zeigt, dass Gesundheit & Selbstfürsorge aktuell bewusst in deinem Leben vorkommen. Achte darauf, ob du dich wirklich versorgst oder ob Selbstfürsorge wieder zu einem Leistungsprojekt geworden ist.`,
+      `Dein Wert zeigt, dass dein Körper und deine Selbstfürsorge bereits Aufmerksamkeit bekommen. Jetzt geht es um Regelmäßigkeit, echte Regeneration und darum, Körpersignale nicht erst ernst zu nehmen, wenn sie sehr laut werden.`,
+      `Dein Wert zeigt, dass Gesundheit & Selbstfürsorge gemischt wirken. Du weißt vermutlich einiges, aber vielleicht bekommt dein Körper im Alltag noch nicht konsequent genug Raum, Ruhe oder Versorgung.`,
+      `Dein Wert zeigt, dass dein Körper aktuell mehr Aufmerksamkeit braucht. Nicht mit Druck, sondern mit Fürsorge. Hier darfst du fragen: Was würde ich für einen Menschen tun, der mir wirklich anvertraut wurde?`
+    ],
+    time:[
+      `Dein Wert zeigt, dass Zeit & Rhythmus aktuell eine starke Rolle spielen. Vielleicht hast du bereits Struktur oder viel Aktivität. Wichtig ist, ob deine Zeit wirklich nach dir klingt – oder ob sie nur gut gefüllt ist.`,
+      `Dein Wert zeigt, dass dein Alltag grundsätzlich Struktur hat. Jetzt geht es um Verfeinerung: mehr echte Eigenzeit, weniger Reaktion, klarere Prioritäten und ein Rhythmus, der auch deinen Körper mitnimmt.`,
+      `Dein Wert zeigt, dass Zeit & Rhythmus noch nicht ganz rund sind. Es gibt wahrscheinlich Bereiche, die funktionieren, aber auch Momente, in denen du dich getrieben, fremdbestimmt oder zu wenig bei dir fühlst.`,
+      `Dein Wert zeigt, dass Zeit gerade ein Engpass sein könnte. Vielleicht kommst du selbst zu wenig in deinem Alltag vor. Dann geht es nicht um noch besseres Zeitmanagement, sondern um geschützten Lebensraum.`
+    ],
+    growth:[
+      `Dein Wert zeigt, dass Wachstum aktuell ein sehr starker Bereich ist. Du lernst, reflektierst, entwickelst dich und suchst nach tieferem Verständnis. Achte darauf, nicht nur immer mehr Erkenntnisse zu sammeln, sondern sie wirklich zu verkörpern.`,
+      `Dein Wert zeigt, dass Wachstum ein tragender Bereich ist. Es geht hier wahrscheinlich um Integration: Was weißt du bereits – und was darf jetzt wirklich in dein Leben einziehen?`,
+      `Dein Wert zeigt, dass Wachstum vorhanden ist, aber nicht vollständig im Alltag verankert wirkt. Vielleicht gibt es viele Impulse, aber noch nicht genug Raum, um sie zu leben.`,
+      `Dein Wert zeigt, dass Wachstum gerade mehr Raum brauchen könnte. Vielleicht nicht durch noch mehr Wissen, sondern durch einen ehrlichen nächsten Schritt, der dich wieder näher zu dir bringt.`
+    ],
+    meaning:[
+      `Dein Wert zeigt, dass Sinn & Beitrag stark in deinem Leben wirken. Du möchtest nicht nur funktionieren, sondern Bedeutung erleben und etwas weitergeben. Achte darauf, deine Vision nicht so groß zu machen, dass der nächste kleine Schritt untergeht.`,
+      `Dein Wert zeigt, dass Sinn grundsätzlich spürbar ist. Jetzt darf er konkreter werden: Wo zeigt sich deine Bedeutung im Alltag, nicht erst irgendwann in der großen Vision?`,
+      `Dein Wert zeigt, dass Sinn & Beitrag vorhanden sind, aber vielleicht noch nicht klar genug gelebt werden. Es gibt Richtung, aber möglicherweise auch Zweifel, Aufschub oder das Gefühl, noch nicht ganz angekommen zu sein.`,
+      `Dein Wert zeigt, dass Sinn gerade mehr Aufmerksamkeit braucht. Das bedeutet nicht, dass dein Leben sinnlos ist. Es kann heißen, dass deine Werte, deine Vision oder dein Beitrag wieder sichtbarer werden möchten.`
+    ]
+  };
+  const i=p>=85?0:p>=70?1:p>=50?2:3;
+  return data[k][i];
+}
+function areaBlock(k,p){
+  return `<div class="result-box"><h2>${areaNames[k]} · ${p}%</h2><p class="lead">${areaPersonalText(k,p)}</p>${areaTexts[k]}</div>`;
+}
+
 function val(id){return document.getElementById(id).value.trim()}
 function showPage(id){document.querySelectorAll('section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo(0,0)}
 let current=0,answers=[];
@@ -87,24 +146,28 @@ function renderQuestion(){const q=questions[current];document.getElementById('qm
 function nextQuestion(){if(answers[current]===undefined||answers[current]===null){alert('Bitte bewege den Regler und wähle einen Wert zwischen 0 und 10.');return}if(current<questions.length-1){current++;renderQuestion()}else{document.getElementById('bar').style.width='100%';showPage('reflect')}}
 function prevQuestion(){if(current>0){current--;renderQuestion()}else showPage('prepare')}
 function pctLabel(p){return scoreText(p)}
-function overallCombination(main,body,top,low){
+function overallCombination(ess1,ess2,body1,body2,top,low){
+  ess1 = ess1 || 'unbekannt';
+  ess2 = ess2 || 'unbekannt';
+  body1 = body1 || 'unbekannt';
+  body2 = body2 || 'unbekannt';
   return `<h2 class="section-title">Deine Gesamt-Konstellation aus Kompass 1, 2 und 3</h2>
   <p>Wenn wir die Ergebnisse aller drei Kompasse gemeinsam betrachten, entsteht ein Gesamtbild aus deinem Inneren, deinem Körper und deinem äußeren Leben.</p>
   <h3>Kompass 1 · Innen</h3>
-  <p>Deine inneren Angaben zeigen besonders: <strong>${main.ess1}</strong> und <strong>${main.ess2}</strong>. Diese Essenzen beschreiben, welche Kraft in dir angelegt ist, welche Art von Wirkung natürlich zu dir passt und welche innere Richtung dein Leben immer wieder sucht.</p>
+  <p>Deine inneren Angaben zeigen besonders: <strong>${ess1}</strong> und <strong>${ess2}</strong>. Diese Essenzen beschreiben, welche Kraft in dir angelegt ist, welche Art von Wirkung natürlich zu dir passt und welche innere Richtung dein Leben immer wieder sucht.</p>
+  <p>${essenceTexts[ess1] || essenceTexts.unbekannt}</p>
+  <p>${essenceTexts[ess2] || ''}</p>
   <h3>Kompass 2 · Körper</h3>
-  <p>Dein Körper-Kompass zeigt besonders: <strong>${body.system1}</strong> und <strong>${body.system2}</strong>. Er zeigt, unter welchen Bedingungen dein System Energie aufbaut, sich reguliert oder überfordert wird. Deshalb sollte dein Lebensrad nie nur nach Aktivität gelesen werden, sondern immer auch nach Tragbarkeit.</p>
+  <p>Dein Körper-Kompass zeigt besonders: <strong>${body1}</strong> und <strong>${body2}</strong>. Er zeigt, unter welchen Bedingungen dein System Energie aufbaut, sich reguliert oder überfordert wird. Deshalb sollte dein Lebensrad nie nur nach Aktivität gelesen werden, sondern immer auch nach Tragbarkeit.</p>
+  <p>${bodyTexts[body1] || bodyTexts.unbekannt}</p>
+  <p>${bodyTexts[body2] || ''}</p>
   <h3>Kompass 3 · Außen</h3>
   <p>Dein Kompass nach außen weist darauf hin, dass aktuell vor allem <strong>${top.map(k=>areaNames[k]).join(', ')}</strong> besonders präsent sind. Gleichzeitig zeigen <strong>${low.map(k=>areaNames[k]).join(', ')}</strong>, wo dein Leben mehr Aufmerksamkeit, Klarheit oder Entlastung brauchen könnte.</p>
   <h3>Was diese Kombination bedeutet</h3>
   <p>Dein inneres Wesen, dein Körper und dein äußeres Leben wirken nicht getrennt voneinander. Kompass nach innen zeigt dir, was in dir angelegt ist. Kompass zum Körper zeigt dir, was dein System braucht. Kompass nach außen zeigt dir, ob dein aktuelles Leben diese innere Wahrheit und diese körperlichen Bedürfnisse unterstützt.</p>
   <p>Die wichtigste Frage lautet deshalb nicht: <em>Was muss ich noch alles schaffen?</em> Die wichtigere Frage lautet: <strong>Welche äußeren Bedingungen helfen mir, mein Inneres zu leben, ohne meinen Körper zu übergehen?</strong></p>
-  <h3>Deine Stärken</h3>
-  <ul><li>Du kannst erkennen, welche Lebensbereiche dich nähren und welche dich Kraft kosten.</li><li>Du kannst aus innerer Erkenntnis äußere Gestaltung machen.</li><li>Du kannst deinen Körper als Wegweiser in Entscheidungen einbeziehen.</li><li>Du kannst lernen, nicht alles gleichzeitig zu optimieren, sondern die nächsten stimmigen Schritte zu wählen.</li></ul>
-  <h3>Mögliche Herausforderungen</h3>
-  <ul><li>Du könntest versuchen, zu viele Lebensbereiche gleichzeitig hochzuhalten.</li><li>Du könntest hohe Werte mit Glück verwechseln, obwohl dein Körper vielleicht bereits Überforderung zeigt.</li><li>Du könntest Entwicklungsbereiche als Fehler sehen, statt als Einladung.</li><li>Du könntest dein Außen schneller verändern wollen, als dein Körper es integrieren kann.</li></ul>
   <h3>Was diese Kombination braucht</h3>
-  <ul><li>klare Prioritäten statt zu viele gleichzeitige Baustellen</li><li>einen Alltag, der deine Energie berücksichtigt</li><li>Beziehungen, in denen du dich nicht verlieren musst</li><li>ein Umfeld, das dein Nervensystem unterstützt</li><li>kleine Schritte, die dein Leben stimmiger machen, statt dich weiter zu überfordern</li></ul>`
+  <ul><li>klare Prioritäten statt zu viele gleichzeitige Baustellen</li><li>einen Alltag, der deine Energie berücksichtigt</li><li>Beziehungen, in denen du dich nicht verlieren musst</li><li>ein Umfeld, das dein Nervensystem unterstützt</li><li>kleine Schritte, die dein Leben stimmiger machen, statt dich weiter zu überfordern</li></ul>`;
 }
 function strengths(top,pcts){return `<h2 class="section-title">Deine drei stärksten Bereiche</h2><p>Diese Bereiche sind in deinem Leben aktuell besonders präsent. Das bedeutet nicht automatisch, dass dort alles perfekt ist. Es zeigt vor allem, dass dort bereits Energie, Aufmerksamkeit, Erfahrung oder innere Stimmigkeit vorhanden ist.</p>${top.map(k=>`<div class="result-box"><h3>${areaNames[k]} · ${pcts[k]}%</h3><p>${pctLabel(pcts[k])}</p><p>Dieser Bereich scheint aktuell ein wichtiger Träger in deinem Leben zu sein. Frage dich trotzdem: Nährt mich dieser Bereich wirklich – oder halte ich ihn nur sehr aktiv?</p><p><strong>Reflexionsfrage:</strong> Was macht diesen Bereich stark – Freude, Klarheit und echte Stimmigkeit oder eher Verantwortung, Gewohnheit und Funktionieren?</p></div>`).join('')}`}
 function development(low,pcts){return `<h2 class="section-title">Bereiche mit Entwicklungspotenzial</h2><p>Die niedrigsten Werte sind keine Schwächen und keine Fehler. Sie zeigen, welche Lebensbereiche aktuell weniger Aufmerksamkeit bekommen oder mehr Energie kosten, als sie zurückgeben.</p>${low.map(k=>`<div class="result-box"><h3>${areaNames[k]} · ${pcts[k]}%</h3><p>${pctLabel(pcts[k])}</p><p>Dieser Bereich darf in den nächsten Wochen bewusster beobachtet werden. Nicht mit Druck, sondern mit der Frage: Was würde diesen Bereich nur um fünf Prozent stimmiger machen?</p><p><strong>Reflexionsfrage:</strong> Was ist hier gerade nicht versorgt – Zeit, Klarheit, Grenzen, Mut, Ruhe, Unterstützung oder eine ehrliche Entscheidung?</p></div>`).join('')}`}
